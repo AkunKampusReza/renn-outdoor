@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog - ReNN Outdoor</title>
+
+    <link rel="stylesheet" href="katalog.css">
+    <script src="data.js" defer></script>
+    <script src="script_katalog.js" defer></script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="landingpage.html" class="logo">
+            ReNN Outdoor
+        </a>
+
+        <div class="search-box">
+            <span>⌕</span>
+            <input type="text" id="searchInput"
+                   placeholder="Cari tenda, alat masak...">
+        </div>
+
+        <button class="cart-button" id="cartButton">
+            🛒
+            <span id="cartCount">0</span>
+        </button>
+
+        <a href="profil.html" class="back-icon-btn">
+         <i class="fa-solid fa-arrow-left"></i>
+         <span>👤</span>
+        </a>
+    </nav>
+
+    <!-- BANNER -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-label">SEWA ALAT CAMPING PREMIUM</span>
+
+            <h1>Jelajahi Alam Tanpa Ribet Beli Alat Mahal</h1>
+
+            <p>
+                Peralatan bersih, terawat, dan siap pakai untuk
+                petualanganmu berikutnya.
+            </p>
+        </div>
+    </header>
+
+    <!-- KATALOG -->
+    <main class="catalog-section" id="katalog">
+
+        <div class="catalog-heading">
+            <div>
+                <h2>Katalog Peralatan Camping</h2>
+                <p>Pilih perlengkapan terbaik untuk petualanganmu.</p>
+            </div>
+
+            <div class="sort-box">
+                <label for="sortSelect">Urutkan:</label>
+                <select id="sortSelect">
+                    <option value="default">Default</option>
+                    <option value="low">Harga: Rendah ke Tinggi</option>
+                    <option value="high">Harga: Tinggi ke Rendah</option>
+                    <option value="name">Nama A-Z</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- KATEGORI -->
+        <div class="category-list">
+            <button class="category-button active" data-category="Semua">
+                ▦ Semua Alat
+            </button>
+
+            <button class="category-button" data-category="Tenda">
+                ⛺ Tenda
+            </button>
+
+            <button class="category-button" data-category="Carrier">
+                🎒 Carrier
+            </button>
+
+            <button class="category-button" data-category="Sleeping Gear">
+                🛏 Sleeping Gear
+            </button>
+
+            <button class="category-button" data-category="Alat Masak">
+                🔥 Alat Masak
+            </button>
+
+            <button class="category-button" data-category="Penerangan">
+                💡 Penerangan
+            </button>
+
+            <button class="category-button" data-category="Aksesoris">
+                🧭 Aksesoris
+            </button>
+        </div>
+
+        <!-- DAFTAR PRODUK DARI JAVASCRIPT -->
+        <div class="product-grid" id="productGrid"></div>
+
+        <div class="empty-message" id="emptyMessage" hidden>
+            <h3>Produk Tidak Ditemukan</h3>
+            <p>Coba gunakan kata kunci lain atau ubah kategori.</p>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h2>ReNN Outdoor</h2>
+        <p>Teman terbaik untuk setiap petualanganmu.</p>
+        <p class="copyright">
+            &copy; 2026 ReNN Outdoor. Semua hak dilindungi.
+        </p>
+    </footer>
+
+    <!-- MODAL KERANJANG -->
+    <div class="modal-overlay" id="cartModal">
+        <div class="modal">
+            <button class="close-button" id="closeCart">×</button>
+
+            <h2>Keranjang Sewa</h2>
+            <p class="modal-description">
+                Periksa perlengkapan yang ingin kamu sewa.
+            </p>
+
+            <div id="cartItems"></div>
+
+            <div class="cart-options">
+                <label for="startDate">Tanggal mulai sewa</label>
+                <input type="date" id="startDate">
+                <p class="profile-note" id="profileNote"></p>
+            </div>
+
+            <div class="cart-total">
+                <span>Total Pembayaran</span>
+                <strong id="cartTotal">Rp0</strong>
+            </div>
+
+            <p class="form-error" id="checkoutError" role="alert" hidden></p>
+
+            <button class="checkout-button" id="checkoutButton">
+                Kirim Pesanan lewat WhatsApp
+            </button>
+        </div>
+    </div>
+    <div id="notification" class="notification">
+    Barang berhasil disimpan ke keranjang!
+</div>
+</body>
+</html>

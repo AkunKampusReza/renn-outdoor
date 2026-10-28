@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - ReNN Outdoor</title>
+    <link rel="stylesheet" href="profil.css">
+    <script src="profil.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>ReNN Outdoor</h1>
+        <nav>
+            <ul>
+                <li><a href="landingpage.html">Beranda</a></li>
+                <li><a href="landingpage.html#keunggulan">Keunggulan</a></li>
+                <li><a href="katalog.html">Katalog Peralatan</a></li>
+                <li><a href="landingpage.html#faq">FAQ</a></li>
+                <li><a href="profil.html" class="active">Profil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <button id="scrollToTop" aria-label="Kembali ke atas">
+            <span aria-hidden="true">↑</span>
+        </button>
+
+        <section id="profil-container">
+            <h2>Profil Saya</h2>
+
+            <div class="profile-card">
+                <div class="profile-info">
+                    <h3 id="display-name">Belum ada nama</h3>
+                    <p class="profile-email" id="display-email">Lengkapi data identitas di bawah</p>
+                </div>
+            </div>
+
+            <div class="profile-grid">
+                <div class="profile-box">
+                    <h3>Data Identitas Penyewa</h3>
+                    <p class="box-desc">Data ini digunakan untuk verifikasi saat pengambilan barang di store dan terisi otomatis saat kamu memesan lewat keranjang. Data hanya tersimpan di browser ini.</p>
+                    <form id="profileForm" class="profile-form">
+                        <div class="form-group">
+                            <label for="fullName">Nama Lengkap (Sesuai KTP)</label>
+                            <input type="text" id="fullName" autocomplete="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email (opsional)</label>
+                            <input type="email" id="email" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor WhatsApp / HP</label>
+                            <input type="tel" id="phone" autocomplete="tel" placeholder="08xxxxxxxxxx" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nik">Nomor KTP / NIK</label>
+                            <input type="text" id="nik" inputmode="numeric" maxlength="16" autocomplete="off" placeholder="16 digit" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Alamat Domisili</label>
+                            <textarea id="address" rows="3" autocomplete="street-address"></textarea>
+                        </div>
+
+                        <p class="form-error" id="profileError" role="alert" hidden></p>
+                        <p class="form-status" id="profileStatus" hidden></p>
+
+                        <button type="submit" class="button button--primary">Simpan Perubahan</button>
+                        <p class="box-desc"><a href="katalog.html#keranjang" class="link-wa">← Kembali ke keranjang</a></p>
+                    </form>
+                </div>
+
+                <div class="profile-box">
+                    <h3>Riwayat Penyewaan</h3>
+                    <p class="box-desc">Daftar transaksi dan status alat camping yang disewa.</p>
+
+                    <div class="history-list">
+                        <div class="history-card">
+                            <div class="history-header">
+                                <span class="history-id">#RN-8492</span>
+                                <span class="status-badge status--active">Sedang Disewa</span>
+                            </div>
+                            <div class="history-body">
+                                <strong>Paket Camping (1x)</strong>
+                                <p>Tenda Kap. 4, Sleeping Bag (2x), Matras (2x)</p>
+                                <span class="history-date">Ambil: 26 Okt 2026 | Kembali: 28 Okt 2026</span>
+                            </div>
+                            <div class="history-footer">
+                                <span>Total: <strong>Rp 1.000.000</strong></span>
+                                <a href="https://wa.me/6285707360233" target="_blank" class="link-wa">Hubungi Admin</a>
+                            </div>
+                        </div>
+
+                        <div class="history-card">
+                            <div class="history-header">
+                                <span class="history-id">#RN-7103</span>
+                                <span class="status-badge status--completed">Selesai</span>
+                            </div>
+                            <div class="history-body">
+                                <strong>Paket Hiking (1x)</strong>
+                                <p>Kompor Portable, Lampu Senter, Cooking Set</p>
+                                <span class="history-date">Ambil: 10 Okt 2026 | Kembali: 12 Okt 2026</span>
+                            </div>
+                            <div class="history-footer">
+                                <span>Total: <strong>Rp 800.000</strong></span>
+                                <span class="text-muted">Kembali Tepat Waktu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pickup-notice">
+                <h4>📍 Informasi Pengambilan Barang</h4>
+                <p>Pengambilan dan pengembalian alat sewa dilakukan langsung di Store ReNN Outdoor:</p>
+                <p><strong>Alamat:</strong> Jl. Petualang No. 45, Kota Merdeka | <strong>Jam Operasional:</strong> 08.00 - 21.00 WIB</p>
+                <small>*Wajib membawa KTP Asli sesuai dengan nama profil saat mengambil barang.</small>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="kontak">
+            <strong>Anda memiliki pertanyaan?</strong>
+            <p>Silakan hubungi kami melalui kontak atau nomor telepon yang tersedia.</p>
+        </div>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:info@sewaalat.com">info@sewaalat.com</a></p>
+            <p>Telepon: <a href="tel:+6285707360233">+62 857-0736-0233</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/nabilizza__" target="_blank">@rennoutdoor</a></p>
+            <p>Alamat: Jl. Petualang No. 45, Kota Merdeka, Indonesia</p>
+        </div>
+        <div class="contact-button">
+            <a href="https://wa.me/6285707360233" class="button button--primary">Hubungi Kami</a>
+        </div>
+    </footer>
+
+</body>
+</html>

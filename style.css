@@ -1,0 +1,510 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+button.button { border: none; cursor: pointer; font: inherit; font-weight: 600; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: #f4f6f0; /* Latar belakang krem/hijau sangat muda */
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Container & Spacing Umum */
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1e3d2f; /* Hijau hutan gelap */
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Garis hiasan di bawah Judul Section */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #e67e22; /* Aksen oranye */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ==========================================
+   HEADER & NAVIGATION
+   ========================================== */
+header {
+    background-color: #1e3d2f; /* Hijau Hutan */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+header p {
+    font-size: 0.95rem;
+    color: #d1e7dd;
+    margin-bottom: 15px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #275a43; /* Warna Hijau saat hover */
+    color: #ffffff;
+}
+
+/* ==========================================
+   HERO / BERANDA SECTION
+   ========================================== */
+#scrollToTop {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    z-index: 2000;
+
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #27ae60; /* Hijau terang */
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTop.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#scrollToTop:hover {
+    background-color: #1e8449; /* Hijau lebih gelap saat hover */
+    outline: 3px solid rgba(71, 178, 50, 0.55);
+    outline-offset: 3px;
+}
+
+#beranda {
+    text-align: center;
+    padding: 90px 20px;
+    background: linear-gradient(rgba(30, 61, 47, 0.85), rgba(30, 61, 47, 0.85)),
+                url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    color: #ffffff;
+    border-radius: 0 0 20px 20px;
+}
+
+#beranda h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+#beranda h2::after {
+    background-color: #f39c12;
+}
+
+#beranda p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #e2e8f0;
+}
+
+.search-control {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.item-search {
+    flex: 2;
+    min-width: 0;
+    padding: 11px 14px;
+    border: 1px solid #d6d0c6;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.item-search:focus-visible,
+.button:focus-visible,
+.faq-item summary:focus-visible{
+    outline: 3px solid rgba(71, 178, 50, 0.55);
+    outline-offset: 3px;
+}
+
+.search-results {
+    background-color: #ffffff;
+    border-radius: 8px;
+    text-align: left;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.results-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 15px;
+    align-items: center;
+    padding: 12px 15px;
+    color: #1e3d2f;
+    text-decoration: none;
+    border-left: 5px solid transparent;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s ease, border-left-color 0.2s ease;
+}
+
+.results-item:last-child {
+    border-bottom: none;
+}
+
+.results-item:hover, .results-item:focus-visible {
+    background-color: #f0f0f0;
+    border-left-color: #27ae60; /* Aksen hijau terang saat hover */
+    padding-left: 10px; /* Efek geser saat hover */
+}
+
+.results-item strong {
+    font-weight: 600;
+    color: #27ae60; /* Hijau terang */
+    display: block;
+    text-transform: capitalize;
+}
+
+.results-item span {
+    font-size: 0.9rem;
+    color: #777777;
+    grid-column: 1 / -1;
+}
+
+.results-item .results-price {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    background-color: #27ae60; /* Hijau terang */
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+
+.results-empty {
+    padding: 15px;
+    color: #999999;
+    text-align: center;
+    font-style: italic;
+}
+
+a.results-empty {
+    display: block;
+    color: #1e3d2f;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+a.results-empty:hover {
+    background-color: #f4f6f0;
+    color: #e67e22;
+}
+
+.search-control--narrow {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+/* Sorotan kartu setelah hasil pencarian diklik */
+.catalog-card--highlight {
+    outline: 3px solid #e67e22;
+    outline-offset: 4px;
+}
+
+/* Pesan kosong di halaman katalog */
+.empty-state {
+    text-align: center;
+    color: #666666;
+    padding: 20px;
+}
+
+/* ==========================================
+   KEUNGGULAN SECTION
+   ========================================== */
+#keunggulan ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+#keunggulan li {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #27ae60; /* Aksen hijau terang */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#keunggulan li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+#keunggulan h3 {
+    color: #1e3d2f;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+#keunggulan p {
+    font-size: 0.95rem;
+    color: #555555;
+}
+
+/* ==========================================
+   KATALOG SECTION
+   ========================================== */
+#katalog {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.catalog-card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #1e3d2f;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.catalog-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.catalog-card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.catalog-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.package-items {
+    font-size: 0.95rem;
+    color: #555555;
+}
+
+.card-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #27ae60;
+}
+
+.catalog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.button.button--primary {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    background-color: #27ae60; /* Hijau terang */
+    color: #ffffff;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.catalog-more {
+    text-align: center;
+    padding: 10px 20px 20px;
+}
+
+.catalog-more p {
+    margin-bottom: 15px;
+    color: #555555;
+}
+
+/* Header halaman katalog: link kembali */
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #1e3d2f;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: #e67e22;
+}
+
+/* ==========================================
+   FAQ SECTION
+   ========================================== */
+#faq {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#faq > p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.faq-item {
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border-left: 5px solid #e67e22; /* Aksen oranye */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.faq-item:hover {
+    background-color: #fafafa;
+}
+
+summary {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #1e3d2f;
+    outline: none;
+}
+
+.faq-item p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   FOOTER & KONTAK SECTION
+   ========================================== */
+footer {
+    background-color: #14281f; /* Hijau sangat gelap */
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+#kontak p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: #d1e7dd;
+}
+
+.contact-info {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #d1e7dd;
+    text-align: center;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.contact-info a {
+    color: #f39c12; /* Aksen oranye */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #e67e22; /* Aksen oranye lebih gelap saat hover */
+}
+
+@media (max-width: 480px) {
+    .results-item {
+        grid-template-columns: 1fr;
+    }
+    .results-item .results-price {
+        grid-column: 1;
+        grid-row: auto;
+        justify-self: start;
+        margin-top: 8px;
+    }
+}

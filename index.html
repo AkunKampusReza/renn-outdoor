@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReNN Outdoor - Sewa Peralatan Camping</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="landing.css">
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="tambah-keranjang.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>ReNN Outdoor</h1>
+        <nav>
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#keunggulan">Keunggulan</a></li>
+                <li><a href="#cara-pesan">Cara Memesan</a></li>
+                <li><a href="katalog.html">Katalog Peralatan</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="katalog.html#keranjang">Keranjang (<span id="cartBadge">0</span>)</a></li>
+                <li><a href="profil.html">Profil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <button id="scrollToTop" aria-label="Kembali ke atas">
+            <span aria-hidden="true">↑</span>
+        </button>
+
+        <!-- BERANDA + PENCARIAN -->
+        <section id="beranda">
+            <h2>Selamat Datang di ReNN Outdoor</h2>
+            <p>Kami menyediakan berbagai peralatan camping dan outdoor berkualitas untuk kebutuhan petualangan Anda.</p>
+            <div class="search-control">
+                <input type="search" class="item-search" name="item-search" id="search" placeholder="Cari produk..." aria-label="Cari peralatan camping">
+            </div>
+            <div id="searchResults" class="search-results" aria-live="polite" hidden></div>
+        </section>
+
+        <!-- KEUNGGULAN -->
+        <section id="keunggulan">
+            <h2>Keunggulan Kami</h2>
+            <ul>
+                <li>
+                    <h3>Peralatan Bersih &amp; Terawat</h3>
+                    <p>Semua tenda dan peralatan dicuci dan dirawat secara rutin setelah digunakan.</p>
+                </li>
+                <li>
+                    <h3>Harga Terjangkau</h3>
+                    <p>Sewa harian murah dengan berbagai paket hemat.</p>
+                </li>
+                <li>
+                    <h3>Kualitas Terjamin</h3>
+                    <p>Menggunakan produk dari merek terpercaya.</p>
+                </li>
+                <li>
+                    <h3>Proses Mudah &amp; Cepat</h3>
+                    <p>Pesan lewat keranjang dan WhatsApp, tanpa ribet.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- CARA MEMESAN -->
+        <section id="cara-pesan">
+            <h2>Cara Memesan</h2>
+            <ol>
+                <li>
+                    <h3>Pilih barang</h3>
+                    <p>Cari paket di beranda atau peralatan satuan di katalog.</p>
+                </li>
+                <li>
+                    <h3>Masukkan keranjang</h3>
+                    <p>Atur durasi dan tanggal mulai sewa di keranjang.</p>
+                </li>
+                <li>
+                    <h3>Lengkapi profil</h3>
+                    <p>Isi data penyewa sekali saja, lalu terisi otomatis.</p>
+                </li>
+                <li>
+                    <h3>Kirim lewat WhatsApp</h3>
+                    <p>Pesanan dikirim ke admin untuk dicek ketersediaannya.</p>
+                </li>
+                <li>
+                    <h3>Ambil di toko</h3>
+                    <p>Bawa KTP asli sebagai jaminan saat mengambil barang.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- PRODUK PILIHAN -->
+        <section id="katalog">
+            <h2>Produk Pilihan</h2>
+            <div class="catalog-grid" id="katalogList" aria-live="polite">
+            </div>
+
+            <div class="catalog-more">
+                <p>Butuh pilihan lain? Lihat semua peralatan di katalog.</p>
+                <a href="katalog.html" class="button button--primary">Lihat Katalog Lengkap →</a>
+                <p class="catalog-more-link"><a href="katalog.html#keranjang">Buka keranjang</a></p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <h2>FAQ</h2>
+            <p>Temukan jawaban atas pertanyaan umum tentang layanan kami.</p>
+            <details class="faq-item">
+                <summary>Bagaimana cara memesan?</summary>
+                <p>Masukkan barang ke keranjang, pilih tanggal mulai sewa, lengkapi profil, lalu kirim pesanan lewat WhatsApp dari keranjang. Admin akan mengonfirmasi ketersediaan barang.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Apa saja persyaratan untuk menyewa peralatan?</summary>
+                <p>Syaratnya sangat mudah! Cukup jaminkan KTP/SIM asli yang masih berlaku selama masa penyewaan dan diserahkan saat pengambilan barang.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Apakah ada biaya tambahan untuk kerusakan peralatan?</summary>
+                <p>Ya, jika peralatan rusak karena kelalaian penyewa, biaya perbaikan akan dikenakan.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Berapa lama waktu peminjaman peralatan?</summary>
+                <p>Waktu peminjaman standar adalah 24 jam, tetapi dapat diperpanjang sesuai kebutuhan.</p>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <div id="kontak">
+            <strong>Anda memiliki pertanyaan?</strong>
+            <p>Silakan hubungi kami melalui kontak atau nomor telepon yang tersedia.</p>
+        </div>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:info@sewaalat.com">info@sewaalat.com</a></p>
+            <p>Telepon: <a href="tel:+6285707360233">+62 857-0736-0233</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/rennoutdoor" target="_blank">@rennoutdoor</a></p>
+            <p>Alamat: Jl. Petualang No. 45, Kota Merdeka, Indonesia</p>
+        </div>
+        <div class="contact-button">
+            <a href="https://wa.me/6285707360233" class="button button--primary">Hubungi Kami</a>
+        </div>
+    </footer>
+</body>
+</html>
